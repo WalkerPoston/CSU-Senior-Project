@@ -1,6 +1,6 @@
 # Custom GPS Tags and Mobile Tracking App
 
-In this project, Custom GPS Tags are used to track missing or stolen items within the Mobile Tracking App. In the app, the location of the Custon GPS Tags will be displayed on a map. The owner will have the ability to share the location of an item, view a missing items forum, and view all active devices. 
+GPS tags will be created, using available hardware, to track missing or commonly misplaced items. An app will also be created that will be used to track the tags. In the app, the user will have the ability to share the location of their tag(s) and will have access to a forum where they can post information on a missing item for other people to watch out for.
 
 ## Compile/Deploy
 
