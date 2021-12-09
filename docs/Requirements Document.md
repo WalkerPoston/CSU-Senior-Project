@@ -1,5 +1,6 @@
-#**Functional Requirements for**
- #**Custom GPS Tags and Mobile Tracking App**
+# **Functional Requirements for**
+ # **Custom GPS Tags and Mobile Tracking App**
+
 
 **ID:** 1
 **Type:** Functional
@@ -9,6 +10,7 @@
 **Priority:** 1
 **Dependencies:** 2
 
+
 **ID:** 2 
 **Type:** Functional
 **Description:** The prototype device, once configured and powered on, should begin transmitting a signal.
@@ -16,6 +18,7 @@
 **Fit Criterion:** The prototype device will be flashing a light, signifying that it is transmitting a signal.
 **Priority:** 1
 **Dependencies:**
+
 
 **ID:** 3
 **Type:** Functional
@@ -25,6 +28,7 @@
 **Priority:** 1
 **Dependencies:** 8
 
+
 **ID:** 4
 **Type:** Performance
 **Description:** The mobile app/webpage must display any active device’s location on the map within 10-20 seconds of mobile app/webpage being opened.
@@ -33,6 +37,7 @@
 **Priority:** 2
 **Dependencies:** 3, 1, 7, 8
 
+
 **ID:** 5 
 **Type:** Functional
 **Description:** The mobile app/webpage must maximize the map to full screen when the “Maximize” button is clicked.
@@ -40,6 +45,7 @@
 **Fit Criterion:** When the “Maximize” button is clicked the map will be fitted to full screen.
 **Priority:** 4
 **Dependencies:** 3, 8
+
 
 **ID:** 6
 **Type:** Functional
@@ -58,6 +64,7 @@
 **Priority:** 1
 **Dependencies:** 1, 2, 3, 8
 
+
 **ID:** 8
 **Type:** Functional 
 **Description:** The mobile app/webpage must open when it is run.
@@ -65,6 +72,7 @@
 **Fit Criterion:** When the mobile app/webpage is run, the default home page will be displayed with the map.
 **Priority:** 1 
 **Dependencies:**
+
 
 **ID:** 9
 **Type:** Functional
@@ -74,6 +82,7 @@
 **Priority:** 4
 **Dependencies:**
 
+
 **ID:** 10
 **Type:** Functional
 **Description:** The mobile app/webpage must go to the missing item page when the “Lost and Found” button is clicked.
@@ -81,6 +90,7 @@
 **Fit Criterion:** When the “Lost and Found” button is clicked, the user should be brought to the missing item page.
 **Priority:** 4
 **Dependencies:** 8
+
 
 **ID:** 11
 **Type:** Functional
@@ -90,6 +100,7 @@
 **Priority:** 3
 **Dependencies:** 8, 3
 
+
 **ID:** 12
 **Type:** Functional 
 **Description:** The mobile app/webpage must show all active devices in drop-down menu format when the “Devices” button is clicked.
@@ -97,6 +108,7 @@
 **Fit Criterion:** When the “Devices” button is clicked, a drop-down menu of all the currently active devices should appear.
 **Priority:** 4
 **Dependencies:** 8, 3
+
 
 **ID:** 13
 **Type:** Functional
@@ -106,6 +118,7 @@
 **Priority:** 4
 **Dependencies:** 8, 12
 
+
 **ID:** 14
 **Type:** Functional
 **Description:** When a device from the “Devices” drop-down menu is clicked, the mobile app/webpage will only display that device’s location.
@@ -113,6 +126,7 @@
 **Fit Criterion:** When a device from the drop-down is clicked, all dots belonging to other devices will disappear from the map.
 **Priority:** 5
 **Dependencies:** 3, 8, 12
+
 
 **ID:** 15
 **Type:** Functional
@@ -122,6 +136,7 @@
 **Priority:** 5
 **Dependencies:** 1, 7, 8, 12 
 
+
 **ID:** 16
 **Type:** Performance
 **Description:** The devices location on the map in the mobile app/webpage will be accurate to 10 – 15 feet.
@@ -129,6 +144,7 @@
 **Fit Criterion:** The location where the device actually is will be measured and compared to where its location is on the map.
 **Priority:** 3
 **Dependencies:** 1, 2, 7, 8
+
 
 **ID:** 17
 **Type:** Functional
@@ -138,6 +154,7 @@
 **Priority:** 4
 **Dependencies:** 1, 2, 3, 4, 7, 8
 
+
 **ID:** 18
 **Type:** Functional
 **Description:** The map in the mobile app/webpage will zoom out when the user clicks the “Zoom Out” button/icon.
@@ -145,6 +162,7 @@
 **Fit Criterion:** When the “Zoom Out” button is clicked, the area surrounding the device will increase.
 **Priority:** 4
 **Dependencies:** 1, 2, 3, 4, 7, 8
+
 
 **ID:** 19
 **Type:** Functional 
@@ -154,6 +172,7 @@
 **Priority:** 4
 **Dependencies:** 1, 3, 8
 
+
 **ID:** 20
 **Type:** Functional
 **Description:** The mobile app/webpage will show the user’s location when they click the “Show My Location” button is clicked.
@@ -161,6 +180,7 @@
 **Fit Criterion:** When the “Show My Location” button is clicked, a dot will appear on the map indicating the location of the user and will be distinguishable from the other dots.
 **Priority:** 4
 **Dependencies:** 1, 3, 8
+
 
 **ID:** 21
 **Type:** Security
