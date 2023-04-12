@@ -68,8 +68,8 @@
         var pnChannel = "raspi-tracker";
 
         var pubnub = new PubNub({
-            publishKey: 'pub-c-6db0a33f-8510-4efa-a066-3feb81e94802',
-            subscribeKey: 'sub-c-aeb29709-0d90-4695-8bfd-e6e7f5340b9b'
+            publishKey: 'MY_PUBLISH_KEY',
+            subscribeKey: 'MY_SUBSCRIBE_KEY'
         });
 
         document.querySelector('#action').addEventListener('click', function () {
@@ -89,7 +89,7 @@
             }
         });
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBjZdiD8JWuGMgz1e6zAM_C2OKOBwEMA7Y&callback=initialize"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=MY_GOOGLE_API_KEY&callback=initialize"></script>
     <!-- <script>
         function newPoint(time) {
               var radius = 0.01;
