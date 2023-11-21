@@ -7,6 +7,7 @@ Pi Tag
 - **Advisor:** Dr. Hayes
 
 ### Table of Contents
+---------------------
 - [Statement of Purpose](#statement-of-purpose)
 - [Research and Background](#research-and-background)
 - [Project Language(s), Software, and Hardware](#project-languages-software-and-hardware)
@@ -18,10 +19,13 @@ Pi Tag
 - [Future Enhancements](#future-enhancements)
 
 ### Statement of Purpose ###
+----------------------------
 
 ### Research and Background ###
+-------------------------------
 
 ### Project Language(s), Software, and Hardware ###
+---------------------------------------------------
 - **Language(s):**
   - Python
   - HTML
@@ -36,15 +40,21 @@ Pi Tag
   - NEO 6M GPS Module 
 
 ### Project Requirements ###
+----------------------------
 
 ### Project Implementation Description and Explanation ###
+----------------------------------------------------------
 
 ### Test Plan ###
+-----------------
 
 ### Test Results ###
+--------------------
 
 ### Challenges Overcome ###
+---------------------------
 
 ### Future Enhancements ###
+---------------------------
 
 [Back to Top](#pi-tag)
