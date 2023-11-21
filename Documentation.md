@@ -22,6 +22,9 @@ Pi Tag
 ### Research and Background
 
 ### Project Language(s), Software, and Hardware
+- **Language(s):** Python and HTML
+- **Software:** Windows OS, Raspberry Pi OS, Thonny, Visual Studio Code, and Windows Command Prompt
+- **Hardware:** Laptop, Raspberry Pi 4 Model B, and NEO 6m GPS Module
 
 ### Project Requirements
 
