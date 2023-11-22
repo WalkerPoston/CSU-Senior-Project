@@ -259,10 +259,10 @@ Pi Tag
 ### Project Implementation Description and Explanation ###
 
 -----------------
-### Test Plan ###
+### [Test Plan](/docs/Test_Plan.md) ###
 
 --------------------
-### Test Results ###
+### [Test Results](/docs/Test_Results.md) ###
 
 ---------------------------
 ### Challenges Overcome ###
