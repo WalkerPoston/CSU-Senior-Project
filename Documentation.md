@@ -21,7 +21,11 @@ Pi Tag
 ----------------------------
 ### Statement of Purpose ###
 
-&nbsp;&nbsp;&nbsp;&nbsp; Theft is a major problem that plagues society and many businesses, resulting in millions lost every year. Many businesses have come to accept that some of the products they sell will be stolen and have included that loss in their budgets as "shrink" or "shrinkage". To reduce the amount of shrinkage, these businesses could invest in something that they could use to recover stolen goods. With the "PI Tag," these businesses would be able to track, locate, and recover stolen products and reduce the amount of shrinkage in their business. 
+&nbsp;&nbsp;&nbsp;&nbsp; Theft is a major problem that plagues society and many businesses, resulting in millions lost every year. Many businesses have come to accept that some of the products they sell will be stolen and have included that loss in their budgets as "shrink" or "shrinkage". To reduce the amount of shrinkage, these businesses could invest in something that they could use to recover stolen goods. With the "PI Tag," these businesses would be able to track, locate, and recover stolen products and reduce the amount of shrinkage in their business. GPS tags can improve the search process for stolen items by reducing the amount of money and time it takes to find the missing item.
+Thieves are a part of society that will always exist no matter what laws are put in place to stop them and the items they steal may never be seen again. Unfortunately, searching for stolen items can be very time-consuming and cost-effective, sometimes never turning up at all. Stolen vehicles can sometimes take more than a week to find.
+<br>
+In 2019, there was approximately $6.4 billion in vehicles thefts and approximately $3 billion is stolen from Walmart each year (Borelli, 2021 & Thomas, 2021). As a way to combat these losses, GPS tags can be placed on an item and can be tracked. With GPS tags on items, once they are stolen, they can be tracked and recovered, reducing the amount of money stolen each year.
+Theft is a major problem that plagues society and many businesses, costing millions and even billions of dollars every year. By implementing GPS tags for individuals and businesses to use, the overall cost of losses can be reduced.
 
 -------------------------------
 ### Research and Background ###
