@@ -88,12 +88,12 @@ The Index Route handles POST requests and form submissions and extracts latitude
 <br><br>The Show Share Route takes the user to the page where they can share the location of their device by rendering the 'share.html' template, the template for the "Share Location" page (Fig 3).<br><br>
 <figure>
   <img src = /media/Share_Location_Page.png width = 800 height = 400>
-  <figcaption>Fig 2. The Share Location page</figcaption>
+  <figcaption>Fig 3. The Share Location page</figcaption>
 </figure>
 <br><br> The Show MissingItem Route renders the 'MissingItem.html' template, the template for the "Missing Item" page (Fig 4).<br><br>
 <figure>
   <img src = /media/Missing_Item_Page.png width = 800 height = 400>
-  <figcaption>Fig 2. The Missing Item Page</figcaption>
+  <figcaption>Fig 4. The Missing Item Page</figcaption>
 </figure>
 <br><br> The Back-to-Map Route is for the "Back to Map" button that, when clicked, renders the 'map.html' template, taking the user back to the main page.
 
@@ -114,15 +114,62 @@ The Index Route handles POST requests and form submissions and extracts latitude
       -  The integration process involves initializing the Google Map, setting up a marker, and updating the map in real-time based on incoming GPS coordinates from PubNub. The combination of Google Maps API and PubNub enables the dynamic display of the device's movement on the map in real time. The polyline drawn on the map helps visualize the path taken by the tracked device. The integration creates a seamless and interactive experience for tracking GPS coordinates on the web page.
 
 ### 6. Data Storage and Retrieval:
-   - **MongoDB Integration:**
-      - MongoDB is integrated into the Flask server to store GPS coordinates. The server establishes a connection to MongoDB, and when new coordinates are received through the /update route, they are inserted into the "coords" collection. The stored coordinates can be retrieved and displayed on the webpage. This integration allows for persistent storage of GPS data, enabling historical tracking and analysis (Fig 5. Mongo database). 
+   - **MongoDB Integration:**<br>
+MongoDB is integrated into the Flask server to store GPS coordinates. The server establishes a connection to MongoDB, and when new coordinates are received through the /update route, they are inserted into the "coords" collection. The stored coordinates can be retrieved and displayed on the webpage. This integration allows for persistent storage of GPS data, enabling historical tracking and analysis (Fig 5).<br>
+<figure>
+  <img src = /media/Database.png>
+  <figcaption>Fig 5. The Mongo Database with GPS coordinates</figcaption>
+</figure>
+<br><br>
 
 ### 7. User Interaction:
-   - **Client-Side Interaction:**
-      - Once the user is on the main page of the website, there are a few things that they are able to do. The first thing they can do is click the green button that says "Start Tracking" and track the position of their device. When that button is clicked, the map will shift to the location of the device. If the device is moving, then on the map the red marker will also be moving followed by a blue trail marking the path the device took (Fig 6. Active Tracking). If the user wants to increase the size of the map, then they can click the "Fullscreen" button in the top right corner of the map window to make the map larger (Fig 7. Fullscreen). If the user needs to zoom in on the marker, they can click on the "Zoom in" button at the bottom right of the screen or map window (Fig 8. Zoomed in view). Likewise, if they are zoomed in too much they can click the "Zoom out" button located under the zoom in button (Fig 9. Zoomed out view) While in the regular or fullscreen view, there are a few things the user can do. The first thing they can do is change between the Street Map view and the Satellite view (Fig 10. Satellite View). In the Street Map view, if they hover over the "Map" button at the top right of the map window, they can select an option to show the terrain (Fig 11. Street Map with Terrain). In the Satellite view, if they hover over the "Satellite" button, they can select the option to turn on/off the labels (Fig 12. Satellite Map w/o labels). The user is also able to go into Street View. All they have to do is drag the yellow figure onto the map (Fig 13. Street View). <br> Under the "Start Tracking" button there are links that go to other pages. The first link takes the user to a page where the user can share the location of their device (Fig 14. Share Location Page). The user can return to the map by clicking "Back to Map". The other link will take the user to a page where they can chat with other people about missing/stolen items (Fig 15. Missing Item Page). The user can return to the map by clicking "Back to Map".
-     
-      - Describe how users interact with the system (e.g., accessing maps, submitting queries).
-
+   - **Client-Side Interaction:**<br>
+Once the user is on the main page of the website, there are a few things that they are able to do. The first thing they can do is click the green button that says "Start Tracking" and track the position of their device. When that button is clicked, the map will shift to the location of the device (Fig 6).<br><br>
+<figure>
+  <img src = /media/Tracking_view.png width = 800 height = 400>
+  <figcaption>Fig 6. The map focused on the marker after the "Start Tracking" button is clicked </figcaption>
+</figure>
+<br><br> If the device is moving, then on the map the red marker will also be moving followed by a blue trail marking the path the device took (Fig 7).<br><br>
+<figure>
+  <img src = /media/Active_tracking.png width = 800 height = 400>
+  <figcaption>Fig 7. What the map looks like while tracking the device</figcaption>
+</figure>
+<br><br> If the user wants to increase the size of the map, then they can click the "Fullscreen" button in the top right corner of the map window to make the map larger (Fig 8).<br><br>
+<figure>
+  <img src = /media/Fullscreen_view.png width = 800 height = 400>
+  <figcaption>Fig 8. The Map in fullscreen view</figcaption>
+</figure>
+<br><br> If the user needs to zoom in on the marker, they can click on the "Zoom in" button at the bottom right of the screen or map window (Fig 9). <br><br>
+<figure>
+  <img src = /media/Zoomed_in_view.png width = 800 height = 400>
+  <figcaption>Fig 9. The map zoomed in on the marker</figcaption>
+</figure>
+<br><br>Likewise, if they are zoomed in too much they can click the "Zoom out" button located under the zoom in button (Fig 10). <br><br>
+<figure>
+  <img src = /media/Zoomed_out_view.png width = 800 height = 400>
+  <figcaption>Fig 10. The map zoomed out away from the marker</figcaption>
+</figure>
+<br><br> While in the regular or fullscreen view, there are a few things the user can do. The first thing they can do is change between the Street Map view, which is the default, and the Satellite view (Fig 11). <br><br>
+<figure>
+  <img src = /media/Satellite_View.png width = 800 height = 400>
+  <figcaption>Fig 11. The map in satellite view</figcaption>
+</figure>
+<br><br> In the Street Map view, if they hover over the "Map" button at the top right of the map window, they can select an option to show the terrain (Fig 12).<br><br>
+<figure>
+  <img src = /media/StreetMap_with_Terrain.png width = 800 height = 400>
+  <figcaption>Fig 12. The Street Map with the Terrain option selected</figcaption>
+</figure>
+<br><br> In the Satellite view, if they hover over the "Satellite" button, they can select the option to turn on/off the labels (Fig 13). <br><br>
+<figure>
+  <img src = /media/Satellite_View_without_Labels.png width = 800 height = 400>
+  <figcaption>Fig 13. The map in satellite view with labels turned off</figcaption>
+</figure>
+<br><br>The user is also able to go into Street View. All they have to do is drag the yellow figure onto the map (Fig 14).<br><br>
+<figure>
+  <img src = /media/Street_View.png width = 800 height = 400>
+  <figcaption>Fig 14. The map when in street view</figcaption>
+</figure>
+<br><br> Under the "Start Tracking" button there are links that go to other pages. The first link takes the user to the "Share Location" page where the user can share the location of their device.  The user can return to the map by clicking "Back to Map". The other link will take the user to the "Missing Item" page where they can chat with other people about missing/stolen items. The user can return to the map by clicking "Back to Map".
 
 ---------------------------------------
 ## [Test Plan](/docs/Test_Plan.md) 
