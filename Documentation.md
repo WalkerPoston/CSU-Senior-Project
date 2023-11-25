@@ -57,6 +57,68 @@ Theft is a major problem that plagues society and many businesses, costing milli
 ----------------------------------------------------------
 ### Project Implementation Description and Explanation ###
 
+# 1. Architecture Overview:
+   - **System Components:**
+      - NEO 6M GPS Module 
+      - Raspberry Pi (Python Integration)
+      - PubNub for Geolocation Services
+      - Flask Server
+      - MongoDB for data storage
+      - Google Maps API key
+      - Webpage
+
+   - **Communication Flow:**
+      - The NEO 6M GPS Module gets GPS data from the satellites and sends it to the Raspberry Pi via a direct wired connection. (Fig 1.) Then the Raspberry Pi processes the data and sends the GPS coordinates to PubNub. The coordinates are also sent to the Flask server via a POST request. The Flask server takes the GPS coordinates and inserts them into the Mongo database. The webpage takes the coordinates that were sent to PubNub and, with help from a script, uses them to mark the real-time location on the map.
+
+# 2. Flask Server:
+   - **Purpose:**
+      - The Flask server is an important part of the project but its functionality is very simple. It connects to the MongoDB server and the database where the GPS coordinates are going to be stored. The server has a couple of different routes. One of the routes extracts the GPS data sent from the Raspberry Pi and inserts the coordinates into the database. 
+      - Explain how it handles incoming data and serves client requests.
+
+   - **Endpoints and Routes:**
+      - Provide an overview of the server's endpoints.
+      - Explain the purpose of each route (e.g., receiving GPS data, serving maps).
+
+# 3. Raspberry Pi Integration:
+   - **Data Acquisition:**
+      - Explain how the Raspberry Pi interacts with the GPS module.
+      - Detail the process of extracting GPS coordinates.
+
+   - **PubNub Integration:**
+      - Describe how PubNub facilitates real-time communication.
+      - Explain how the Raspberry Pi publishes GPS data to PubNub.
+
+# 4. PubNub Geolocation Services:
+   - **Role in the System:**
+      - Elaborate on how PubNub enhances geolocation services.
+      - Explain its role in facilitating real-time communication.
+
+# 5. Google Maps API Integration:
+   - **Mapping Functionality:**
+      - Detail how the Google Maps API is used for visualization.
+      - Explain the integration process for displaying GPS coordinates on the map.
+
+# 6. Data Storage and Retrieval:
+   - **MongoDB Integration:**
+      - If applicable, explain how MongoDB is integrated for data storage.
+      - Detail how historical data can be retrieved and analyzed.
+
+# 7. Security Measures:
+   - **Data Encryption:**
+      - Discuss any encryption methods employed to secure GPS data.
+      - Describe measures taken to ensure the system's overall security.
+
+# 8. Scalability and Performance:
+   - **Scalability Measures:**
+      - Discuss the system's scalability to handle increased data load.
+      - Explain any performance optimization strategies implemented.
+
+# 9. User Interaction:
+   - **Client-Side Interaction:**
+      - Describe how users interact with the system (e.g., accessing maps, submitting queries).
+      - Explain any user authentication mechanisms in place.
+
+
 ---------------------------------------
 ### [Test Plan](/docs/Test_Plan.md) ###
 
@@ -79,7 +141,7 @@ Another challenge that I had to overcome was setting up the GPS module to work w
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp; There are a bunch of things that I need/can do in the future to make my project better. A couple of these enhancements are related to my requirements for the project. Some of the requirements I have listed failed during the testing phase of my project. I still need to add the "Devices" button, that displays all of the active devices and other features. I need to add the "Show My Location" button, the change name feature, the change color feature, and the "Key" button.  So, to enhance my project further, I will need to get those requirements working. Some of the requirements that passed during testing can be modified to further enhance the project. An example of this would be the "Share Location" page. Right now as it sits, when you type an email address in and hit submit, nothing happens. There is no backend code that does anything with the email address that is entered. It is the same for the "Lost and Found" page, once something is typed in the text box and is submitted nothing happens. 
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp; While testing my project, I came up with another way that I could enhance it further. One of these ways is to run all the code only on the Raspberry Pi. I found out that for the project to work properly both the device running the server code and the Raspberry Pi have to be on the same network. To fix this issue, I can use the Raspberry Pi Zero W instead of the Raspberry Pi 4. Doing this should allow me to run all of the code on the Raspberry Pi Zero W instead of on two separate devices. Right now for the project to work properly, I have to run the server code on my computer and then run the code on the Raspberry Pi while having both of them connect to the hotspot on my phone. Doing it this way isn't feasible for tracking stolen merchandise from a retail store.
+&nbsp;&nbsp;&nbsp;&nbsp; While testing my project, I came up with another way that I could enhance it further. One of these ways is to run all the code only on the Raspberry Pi. I found out that for the project to work properly both the device running the server code and the Raspberry Pi have to be on the same network. To fix this issue, I can use the Raspberry Pi Zero W instead of the Raspberry Pi 4. Doing this should allow me to run all of the code on the Raspberry Pi Zero W instead of on two separate devices. Right now for the project to work properly, I have to run the server code on my computer and then run the code on the Raspberry Pi while having both of them connect to the hotspot on my phone. Doing it this way isn't feasible for tracking stolen merchandise from a retail store. By putting all of the code on a single device, that device can be configured to run the code when the device is booted up. This would mean that the user wouldn't have to manually run the code.
 <br>
 Another way to enhance the project is to change what is going to be tracked. My entire project from the beginning has been focused on being able to track merchandise stolen from stores but what might be better is if I change the focus to tracking something bigger, like vehicles or larger packages that are being shipped. Doing it this way would allow me to keep my project close to how it is now with little that I would have to change.
 
