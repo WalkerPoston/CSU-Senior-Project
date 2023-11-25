@@ -171,6 +171,10 @@ Once the user is on the main page of the website, there are a few things that th
 </figure>
 <br><br> Under the "Start Tracking" button there are links that go to other pages. The first link takes the user to the "Share Location" page where the user can share the location of their device.  The user can return to the map by clicking "Back to Map". The other link will take the user to the "Missing Item" page where they can chat with other people about missing/stolen items. The user can return to the map by clicking "Back to Map".
 
+### Link to Code
+  - [Raspberry Pi Code](/src/raspberry_pi)
+  - [Webpage Code](/src/webpage)
+
 ---------------------------------------
 ## [Test Plan](/docs/Test_Plan.md) 
 
