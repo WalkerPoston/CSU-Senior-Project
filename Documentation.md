@@ -7,7 +7,7 @@ Pi Tag
 - **Advisor:** Dr. Hayes
 
 ---------------------
-### Table of Contents
+## Table of Contents
 - [Statement of Purpose](#statement-of-purpose)
 - [Research and Background](#research-and-background)
 - [Project Language(s), Software, and Hardware](#project-languages-software-and-hardware)
@@ -19,7 +19,7 @@ Pi Tag
 - [Future Enhancements](#future-enhancements)
 
 ----------------------------
-### Statement of Purpose ###
+## Statement of Purpose 
 
 &nbsp;&nbsp;&nbsp;&nbsp; Theft is a major problem that plagues society and many businesses, resulting in millions lost every year. Many businesses have come to accept that some of the products they sell will be stolen and have included that loss in their budgets as "shrink" or "shrinkage". To reduce the amount of shrinkage, these businesses could invest in something that they could use to recover stolen goods. With the "PI Tag," these businesses would be able to track, locate, and recover stolen products and reduce the amount of shrinkage in their business. GPS tags can improve the search process for stolen items by reducing the amount of money and time it takes to find the missing item.
 Thieves are a part of society that will always exist no matter what laws are put in place to stop them and the items they steal may never be seen again. Unfortunately, searching for stolen items can be very time-consuming and cost-effective, sometimes never turning up at all. Stolen vehicles can sometimes take more than a week to find.
@@ -28,7 +28,7 @@ In 2019, there was approximately $6.4 billion in vehicles thefts and approximate
 Theft is a major problem that plagues society and many businesses, costing millions and even billions of dollars every year. By implementing GPS tags for individuals and businesses to use, the overall cost of losses can be reduced.
 
 -------------------------------
-### Research and Background ###
+## Research and Background 
 
 &nbsp;&nbsp;&nbsp;&nbsp; I didn't have much background in GPS tracking before deciding to do it for my senior project, so I had to do a lot of research to find sources on the subject. While researching for sources, I found the site that I would ultimately use to help me complete my project. Click [here](https://sparklers-the-makers.github.io/blog/robotics/realtime-gps-tracker-with-raspberry-pi/) to view the site. The site has instructions on how to configure the Raspberry Pi with the GPS module so it can receive GPS coordinates. The site also included all of the hardware and software that I would need to get it working, including some of the HTML code for the webpage. After completing that part of the project, the next thing I had to do was figure out how to make a webserver that would host the project. I ended up researching and using Python Flask for my webserver. At the time I didn't have any knowledge of how to make a webserver so I just followed along with the tutorial that Flask has. Click [here](https://flask.palletsprojects.com/en/2.3.x/) to see that tutorial. This tutorial has you set up a blog server so I followed along with it to see if I could use anything from it. 
 <br>
@@ -37,7 +37,7 @@ Theft is a major problem that plagues society and many businesses, costing milli
 &nbsp;&nbsp;&nbsp;&nbsp; Before the server was able to receive GPS coordinates from the Raspberry Pi, I had to figure out how to send them. I researched how to send a POST request with Python and found multiple sources. Once I added what I found to my code I tried running it and there was no output. The error I got was pretty lengthy but boiled down to the Raspberry Pi not being able to connect to my server. It took a few weeks of troubleshooting and brainstorming new ideas that might fix the issue but nothing worked. One of them, which could have helped, was running the server from the Windows Command Prompt instead of WSL Ubuntu. On the day that it started to work while meeting with Dr. Hayes, we tried uninstalling every version of Python that was installed on my computer and just installed the version that the Raspberry Pi was using, which was v3.9.2, and it started working.  
 
 ---------------------------------------------------
-### Project Language(s), Software, and Hardware ###
+## Project Language(s), Software, and Hardware 
 - **Language(s):**
   - Python
   - HTML
@@ -52,12 +52,12 @@ Theft is a major problem that plagues society and many businesses, costing milli
   - NEO 6M GPS Module 
 
 --------------------------------------------------------------
-### [Project Requirements](/docs/Requirements_Document.md) ###
+## [Project Requirements](/docs/Requirements_Document.md) 
 
 ----------------------------------------------------------
-### Project Implementation Description and Explanation ###
+## Project Implementation Description and Explanation 
 
-# 1. Architecture Overview:
+### 1. Architecture Overview:
    - **System Components:**
       - NEO 6M GPS Module 
       - Raspberry Pi (Python Integration)
@@ -68,65 +68,59 @@ Theft is a major problem that plagues society and many businesses, costing milli
       - Webpage
 
    - **Communication Flow:**
-      - The NEO 6M GPS Module gets GPS data from the satellites and sends it to the Raspberry Pi via a direct wired connection. (Fig 1.) Then the Raspberry Pi processes the data and sends the GPS coordinates to PubNub. The coordinates are also sent to the Flask server via a POST request. The Flask server takes the GPS coordinates and inserts them into the Mongo database. The webpage takes the coordinates that were sent to PubNub and, with help from a script, uses them to mark the real-time location on the map.
+      - The NEO 6M GPS Module gets GPS data from the satellites and sends it to the Raspberry Pi via a direct wired connection (Fig 1). Then the Raspberry Pi processes the data and sends the GPS coordinates to PubNub. The coordinates are also sent to the Flask server via a POST request. The Flask server takes the GPS coordinates and inserts them into the Mongo database. The webpage takes the coordinates that were sent to PubNub and, with help from a script, uses them to mark the real-time location on the map.
 
-# 2. Flask Server:
+### 2. Flask Server:
    - **Purpose:**
-      - The Flask server is an important part of the project but its functionality is very simple. It connects to the MongoDB server and the database where the GPS coordinates are going to be stored. The server has a couple of different routes. One of the routes extracts the GPS data sent from the Raspberry Pi and inserts the coordinates into the database. 
-      - Explain how it handles incoming data and serves client requests.
+      - The Flask server is an important part of the project but its functionality is very simple. It has routes for displaying various HTML templates and handling form submissions to update the MongoDB collection with GPS coordinates. The templates are rendered with data retrieved from the MongoDB collection. 
 
    - **Endpoints and Routes:**
-      - Provide an overview of the server's endpoints.
-      - Explain the purpose of each route (e.g., receiving GPS data, serving maps).
+      - The Index Route handles POST requests and form submissions and extracts latitude and longitude from the form data. It inserts the data into MongoDB collection and then redirects to the same route to display the updated coordinates. The Show Map Route takes the user to the main page by rendering the 'map.html' template, the template for the main page (Fig 2. Main page). The Show Share Route takes the user to the page where they can share the location of their device by rendering the 'share.html' template, the template for the "Share Location" page (Fig 3. Share Location page). The Show MissingItem Route renders the 'MissingItem.html' template, the template for the "Missing Item" page (Fig 4. Missing Item page). The Back-to-Map Route is for the "Back to Map" button that, when clicked, renders the 'map.html' template, taking the user back to the main page.
 
-# 3. Raspberry Pi Integration:
+### 3. Raspberry Pi Integration:
    - **Data Acquisition:**
-      - Explain how the Raspberry Pi interacts with the GPS module.
-      - Detail the process of extracting GPS coordinates.
+      - The Raspberry Pi interacts with the GPS module by establishing a serial connection. It then reads NMEA sentences from the module, parsing these sentences to extract latitude and longitude information, and then using the extracted coordinates for further actions, such as publishing them to a PubNub channel and sending them to a server via HTTP POST request. The code continuously repeats this process in a loop to keep receiving and processing GPS data
 
    - **PubNub Integration:**
-      - Describe how PubNub facilitates real-time communication.
-      - Explain how the Raspberry Pi publishes GPS data to PubNub.
+      - PubNub is a real-time communication platform that provides the infrastructure and services to enable seamless and efficient real-time communication between devices, applications, and users. The Raspberry Pi interacts with PubNub by configuring PubNub with the required keys and settings, subscribing to a specific channel (raspi-tracker), and then continuously publishing GPS coordinates to that channel in a loop. The PubNub service ensures that these coordinates are delivered to any devices or applications that are subscribed to the same channel in near real-time. 
 
-# 4. PubNub Geolocation Services:
+### 4. PubNub Geolocation Services:
    - **Role in the System:**
-      - Elaborate on how PubNub enhances geolocation services.
-      - Explain its role in facilitating real-time communication.
+      - In my project, PubNub is acting as the communication backbone, enabling real-time updates of GPS data from the Raspberry Pi to other parts of my system, such as a web application, mobile app, or any other service that needs to consume or react to the real-time location information. This real-time communication is vital for applications such as live tracking, monitoring, or any use case where immediate updates are required based on changing geolocation data.
 
-# 5. Google Maps API Integration:
+### 5. Google Maps API Integration:
    - **Mapping Functionality:**
-      - Detail how the Google Maps API is used for visualization.
-      - Explain the integration process for displaying GPS coordinates on the map.
+      - The Google Maps API is used to initialize a map, place a marker, and update the map in real-time based on incoming GPS coordinates. The PubNub integration ensures that the webpage can receive real-time updates from the Raspberry Pi, allowing the user to track the movement of the device on the map dynamically. 
+      -  The integration process involves initializing the Google Map, setting up a marker, and updating the map in real-time based on incoming GPS coordinates from PubNub. The combination of Google Maps API and PubNub enables the dynamic display of the device's movement on the map in real time. The polyline drawn on the map helps visualize the path taken by the tracked device. The integration creates a seamless and interactive experience for tracking GPS coordinates on the web page.
 
-# 6. Data Storage and Retrieval:
+### 6. Data Storage and Retrieval:
    - **MongoDB Integration:**
-      - If applicable, explain how MongoDB is integrated for data storage.
-      - Detail how historical data can be retrieved and analyzed.
+      - MongoDB is integrated into the Flask server to store GPS coordinates. The server establishes a connection to MongoDB, and when new coordinates are received through the /update route, they are inserted into the "coords" collection. The stored coordinates can be retrieved and displayed on the webpage. This integration allows for persistent storage of GPS data, enabling historical tracking and analysis.
 
-# 7. Security Measures:
+### 7. Security Measures:
    - **Data Encryption:**
       - Discuss any encryption methods employed to secure GPS data.
       - Describe measures taken to ensure the system's overall security.
 
-# 8. Scalability and Performance:
+### 8. Scalability and Performance:
    - **Scalability Measures:**
       - Discuss the system's scalability to handle increased data load.
       - Explain any performance optimization strategies implemented.
 
-# 9. User Interaction:
+### 9. User Interaction:
    - **Client-Side Interaction:**
       - Describe how users interact with the system (e.g., accessing maps, submitting queries).
       - Explain any user authentication mechanisms in place.
 
 
 ---------------------------------------
-### [Test Plan](/docs/Test_Plan.md) ###
+## [Test Plan](/docs/Test_Plan.md) 
 
 ---------------------------------------------
-### [Test Results](/docs/Test_Results.md) ###
+## [Test Results](/docs/Test_Results.md) 
 
 ---------------------------
-### Challenges Overcome ###
+## Challenges Overcome 
 
 &nbsp;&nbsp;&nbsp;&nbsp; This project is without a doubt the most challenging assignment I think I have done throughout my time at Charleston Southern. There were a lot of challenges that I had to overcome in order to get get project where it is today. The first challenge I had to overcome was soldering the pins into my GPS module. To do that I had to first buy a soldering kit off of Amazon. Once it arrived I had to figure out how to hold the pins into the GPS module without the help of a stand or helping hands. So, I carefully balanced the pins in their holes by leaning the module on top of the pins and using gravity to keep them in place. This was the best method I could think of at the time and it worked out pretty well. If you look at the pins, you can see a slight bend in them.
 Another challenge that I had to overcome was setting up the GPS module to work with the Raspberry Pi. It took a good amount of time to set up, even with following along with the website. After following along with the website to the end, I went to run the program to see if it would give me GPS coordinates and when I ran it, it didn't give me any coordinates. So I went back through the steps that the website gave, thinking I missed something or made a typo. It turned out that the coordinates coming from the GPS were encoded and couldn't get read when ser.readline() was called. I found the answer to my problem in the comments at the bottom of the website. Someone was having the same problem as me and to fix it, I just had to add .decode('unicode_escape') to the end of ser.readline(). Since the coordinates were encoded, they would be decoded with .decode('unicode_escape') and could be read. I ran the program after adding that snippet of code and it started to work.
@@ -135,7 +129,7 @@ Another challenge that I had to overcome was setting up the GPS module to work w
 
 
 ---------------------------
-### Future Enhancements ###
+## Future Enhancements 
 
 &nbsp;&nbsp;&nbsp;&nbsp; My project is nowhere near where I envisioned it. When I came up with the idea of doing a GPS-tracking device for my senior project, I pictured the end product looking something like an Apple Air Tag. To get it to that state it needs to be scaled down by a significant amount. I know that I won't be able to get it to be as small as an Apple Air Tag but it can definitely be smaller than it is now. A couple of things I can do to scale it down is to use a smaller Raspberry Pi. Right now I am using the Raspberry Pi 4 Model B for my project but according the the site I used to set it up, I can also use the Raspberry Pi Zero which is significantly smaller than the Raspberry Pi 4. Another way I can scale it down is to use a smaller GPS module. The smallest GPS module on the market is the u-blox MIA-M10. Replacing the NEO 6M GPS Module that is currently being used in my project with the u-blox MIA-M10 will help with scaling down my project as a whole. 
 <br>
@@ -144,5 +138,8 @@ Another challenge that I had to overcome was setting up the GPS module to work w
 &nbsp;&nbsp;&nbsp;&nbsp; While testing my project, I came up with another way that I could enhance it further. One of these ways is to run all the code only on the Raspberry Pi. I found out that for the project to work properly both the device running the server code and the Raspberry Pi have to be on the same network. To fix this issue, I can use the Raspberry Pi Zero W instead of the Raspberry Pi 4. Doing this should allow me to run all of the code on the Raspberry Pi Zero W instead of on two separate devices. Right now for the project to work properly, I have to run the server code on my computer and then run the code on the Raspberry Pi while having both of them connect to the hotspot on my phone. Doing it this way isn't feasible for tracking stolen merchandise from a retail store. By putting all of the code on a single device, that device can be configured to run the code when the device is booted up. This would mean that the user wouldn't have to manually run the code.
 <br>
 Another way to enhance the project is to change what is going to be tracked. My entire project from the beginning has been focused on being able to track merchandise stolen from stores but what might be better is if I change the focus to tracking something bigger, like vehicles or larger packages that are being shipped. Doing it this way would allow me to keep my project close to how it is now with little that I would have to change.
+<br> 
+<br>
+Another thing that needs to be done is to add more security to the project. One way to do that is to make sure that all communication between the Raspberry Pi and the Flask server, as well as any communication involving sensitive data, is secured using TLS. Another security feature that needs to be implemented is to use HTTPS to serve the Flask server. This ensures that data transmitted between the web browser and the server is encrypted. Another security feature that might need to be implemented is authentication mechanisms to verify the identity of users or devices interacting with the system. Multifactor authentication would also add additional security. Additionally, I could also implement authorization checks to ensure that users or devices only access the data they are permitted to. Another way to add security to the project is to ensure that the database is properly secured by using authentication, setting up access controls, and encrypting data at rest. Another important security measure that needs to be added is to ensure that user inputs are properly validated before being processed by the server to prevent SQL injection, XSS, or other injection vulnerabilities. Another way that could increase security is to secure the Raspberry Pi itself by changing default passwords, disabling unnecessary services, and keeping the operating system and software up to date with security patches.
 
 [Back to Top](#pi-tag)
