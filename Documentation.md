@@ -67,15 +67,35 @@ Theft is a major problem that plagues society and many businesses, costing milli
       - Google Maps API key
       - Webpage
 
-   - **Communication Flow:**
-      - The NEO 6M GPS Module gets GPS data from the satellites and sends it to the Raspberry Pi via a direct wired connection (Fig 1). Then the Raspberry Pi processes the data and sends the GPS coordinates to PubNub. The coordinates are also sent to the Flask server via a POST request. The Flask server takes the GPS coordinates and inserts them into the Mongo database. The webpage takes the coordinates that were sent to PubNub and, with help from a script, uses them to mark the real-time location on the map.
+   - **Communication Flow:**<br>
+The NEO 6M GPS Module gets GPS data from the satellites and sends it to the Raspberry Pi via a direct wired connection (Fig 1).<br>
+<figure>
+  <img src = /media/RaspberryPi_and_GPSModule.jpg width = 400 height = 400>
+  <figcaption>Fig 1. GPS Module connected to Raspberry Pi</figcaption>
+</figure>
+<br><br>Then the Raspberry Pi processes the data and sends the GPS coordinates to PubNub. The coordinates are also sent to the Flask server via a POST request. The Flask server takes the GPS coordinates and inserts them into the Mongo database. The webpage takes the coordinates that were sent to PubNub and, with help from a script, uses them to mark the real-time location on the map.
 
 ### 2. Flask Server:
    - **Purpose:**
       - The Flask server is an important part of the project but its functionality is very simple. It has routes for displaying various HTML templates and handling form submissions to update the MongoDB collection with GPS coordinates. The templates are rendered with data retrieved from the MongoDB collection. 
 
-   - **Endpoints and Routes:**
-      - The Index Route handles POST requests and form submissions and extracts latitude and longitude from the form data. It inserts the data into MongoDB collection and then redirects to the same route to display the updated coordinates. The Show Map Route takes the user to the main page by rendering the 'map.html' template, the template for the main page (Fig 2. Main page). The Show Share Route takes the user to the page where they can share the location of their device by rendering the 'share.html' template, the template for the "Share Location" page (Fig 3. Share Location page). The Show MissingItem Route renders the 'MissingItem.html' template, the template for the "Missing Item" page (Fig 4. Missing Item page). The Back-to-Map Route is for the "Back to Map" button that, when clicked, renders the 'map.html' template, taking the user back to the main page.
+   - **Endpoints and Routes:**<br>
+The Index Route handles POST requests and form submissions and extracts latitude and longitude from the form data. It inserts the data into MongoDB collection and then redirects to the same route to display the updated coordinates. The Show Map Route takes the user to the main page by rendering the 'map.html' template, the template for the main page (Fig 2).<br>
+<figure>
+  <img src = /media/Default_view.png width = 800 height = 400>
+  <figcaption>Fig 2. The main page</figcaption>
+</figure>
+<br><br>The Show Share Route takes the user to the page where they can share the location of their device by rendering the 'share.html' template, the template for the "Share Location" page (Fig 3).<br><br>
+<figure>
+  <img src = /media/Share_Location_Page.png width = 800 height = 400>
+  <figcaption>Fig 2. The Share Location page</figcaption>
+</figure>
+<br><br> The Show MissingItem Route renders the 'MissingItem.html' template, the template for the "Missing Item" page (Fig 4).<br><br>
+<figure>
+  <img src = /media/Missing_Item_Page.png width = 800 height = 400>
+  <figcaption>Fig 2. The Missing Item Page</figcaption>
+</figure>
+<br><br> The Back-to-Map Route is for the "Back to Map" button that, when clicked, renders the 'map.html' template, taking the user back to the main page.
 
 ### 3. Raspberry Pi Integration:
    - **Data Acquisition:**
