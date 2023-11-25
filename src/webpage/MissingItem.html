@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/map.css">
+    <title>Missing Items Forum</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg-others">
+        <div class="container">
+            <h2>Missing Items Forum</h2>
+
+            <div id="forum">
+                <div id="messages"></div>
+                <textarea id="messageInput" placeholder="Type your message..."></textarea>
+                <br>
+                <!-- <button id="submitButton" onclick="postMessage()">Post Message</button> -->
+                <button id="submitButton">Post Message</button>
+            </div>
+            <br>
+            <center>
+                <a href="map.html">Back to Map</a>
+            </center>
+
+            <!-- <script>
+                function postMessage() {
+                    var messageInput = document.getElementById('messageInput');
+                    var messagesContainer = document.getElementById('messages');
+
+                    if (messageInput.value.trim() !== '') {
+                        var message = document.createElement('div');
+                        message.className = 'message';
+                        message.innerHTML = '<strong>User:</strong> ' + messageInput.value;
+
+                        messagesContainer.appendChild(message);
+
+                        // Clear the input field after posting
+                        messageInput.value = '';
+                    } else {
+                        alert('Please enter a message before posting.');
+                    }
+                }
+            </script> -->
+        </div>
+    </div>
+
+</body>
+</html>

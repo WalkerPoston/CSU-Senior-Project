@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/share.css">
+    <title>Location Sharing</title>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="bg-others">
+        <div class="container">
+            <h2>Share Your Location</h2>
+
+            <form id="locationForm">
+                <label for="email">Enter the recipient's email address:</label>
+                <input type="email" id="email" name="email" required>
+                <!-- <button type="button" onclick="sendLocation()">Send Location</button> -->
+                <button type="button">Send Location</button>
+            </form>
+            <br>
+            <center>
+                <a href="map.html">Back to Map</a>
+            </center>
+
+            <!-- <script>
+                function sendLocation() {
+                    // Add your location-sharing logic here
+                    // You may use JavaScript to get the device's location using the Geolocation API
+                    // and send an email to the provided address with a link to the location.
+                    // This example assumes you have a function named sendEmail with the necessary logic.
+
+                    var email = document.getElementById('email').value;
+
+                    if (email) {
+                        // Call your function to send the location email
+                        sendEmail(email);
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                }
+            </script> -->
+
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" 
+    integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>FlaskApp</title>
+    <style>
+        .coords {
+            padding: 20px;
+            margin: 10px;
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <h1>GPS Coordinates</h1>
+    <hr>
+    <div class="coords">
+    <form method="post" class="pure-form">
+        <p>
+            <b><label for="lat">Latitude</label></b>
+        </p>
+        <p>
+            <input type="text" name="lat"
+                placeholder="Latitude"></input>
+        </p>
+
+        <p>
+            <b><label for="lng">Longitude</label></b>
+        </p>
+        <p>
+            <input type="text" name="lng"
+                placeholder="Longitude"></input>
+        </p>
+
+        <button type="submit">Submit</button>
+    </form>
+    <hr>
+    <!--
+    {% for coord in coords %}
+        <div class="coord">
+            <p>Latitude: {{ coord['lat'] }}</p>
+            <p>Longitude: {{ coord['lng'] }}</p>
+        </div>
+    {% endfor %}-->
+    </div>
+</body>
+</html>
