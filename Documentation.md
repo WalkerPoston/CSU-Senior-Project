@@ -95,22 +95,13 @@ Theft is a major problem that plagues society and many businesses, costing milli
 
 ### 6. Data Storage and Retrieval:
    - **MongoDB Integration:**
-      - MongoDB is integrated into the Flask server to store GPS coordinates. The server establishes a connection to MongoDB, and when new coordinates are received through the /update route, they are inserted into the "coords" collection. The stored coordinates can be retrieved and displayed on the webpage. This integration allows for persistent storage of GPS data, enabling historical tracking and analysis.
+      - MongoDB is integrated into the Flask server to store GPS coordinates. The server establishes a connection to MongoDB, and when new coordinates are received through the /update route, they are inserted into the "coords" collection. The stored coordinates can be retrieved and displayed on the webpage. This integration allows for persistent storage of GPS data, enabling historical tracking and analysis (Fig 5. Mongo database). 
 
-### 7. Security Measures:
-   - **Data Encryption:**
-      - Discuss any encryption methods employed to secure GPS data.
-      - Describe measures taken to ensure the system's overall security.
-
-### 8. Scalability and Performance:
-   - **Scalability Measures:**
-      - Discuss the system's scalability to handle increased data load.
-      - Explain any performance optimization strategies implemented.
-
-### 9. User Interaction:
+### 7. User Interaction:
    - **Client-Side Interaction:**
+      - Once the user is on the main page of the website, there are a few things that they are able to do. The first thing they can do is click the green button that says "Start Tracking" and track the position of their device. When that button is clicked, the map will shift to the location of the device. If the device is moving, then on the map the red marker will also be moving followed by a blue trail marking the path the device took (Fig 6. Active Tracking). If the user wants to increase the size of the map, then they can click the "Fullscreen" button in the top right corner of the map window to make the map larger (Fig 7. Fullscreen). If the user needs to zoom in on the marker, they can click on the "Zoom in" button at the bottom right of the screen or map window (Fig 8. Zoomed in view). Likewise, if they are zoomed in too much they can click the "Zoom out" button located under the zoom in button (Fig 9. Zoomed out view) While in the regular or fullscreen view, there are a few things the user can do. The first thing they can do is change between the Street Map view and the Satellite view (Fig 10. Satellite View). In the Street Map view, if they hover over the "Map" button at the top right of the map window, they can select an option to show the terrain (Fig 11. Street Map with Terrain). In the Satellite view, if they hover over the "Satellite" button, they can select the option to turn on/off the labels (Fig 12. Satellite Map w/o labels). The user is also able to go into Street View. All they have to do is drag the yellow figure onto the map (Fig 13. Street View). <br> Under the "Start Tracking" button there are links that go to other pages. The first link takes the user to a page where the user can share the location of their device (Fig 14. Share Location Page). The user can return to the map by clicking "Back to Map". The other link will take the user to a page where they can chat with other people about missing/stolen items (Fig 15. Missing Item Page). The user can return to the map by clicking "Back to Map".
+     
       - Describe how users interact with the system (e.g., accessing maps, submitting queries).
-      - Explain any user authentication mechanisms in place.
 
 
 ---------------------------------------
