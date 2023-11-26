@@ -42,12 +42,11 @@ Theft is a major problem that plagues society and many businesses, costing milli
   - Python
   - HTML
 - **Software:**
-  -  Windows OS
-  -  Raspberry Pi OS
-  -  Thonny
-  -  Visual Studio Code
-  -  Windows Command Prompt
-  -  Mongo Database
+  - PubNub for Geolocation Services
+  - Python Flask
+  - MongoDB for data storage
+  - Google Maps API key
+  - Project Webpage
 - **Hardware:**
   - Raspberry Pi 4 Model B
   - NEO 6M GPS Module 
@@ -276,7 +275,7 @@ Theft is a major problem that plagues society and many businesses, costing milli
       - Flask Server
       - MongoDB for data storage
       - Google Maps API key
-      - Webpage
+      - Project Webpage
 
    - **Communication Flow:**<br>
 The NEO 6M GPS Module gets GPS data from the satellites and sends it to the Raspberry Pi via a direct wired connection (Fig 1).<br>
