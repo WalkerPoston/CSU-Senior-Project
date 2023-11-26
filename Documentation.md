@@ -47,6 +47,7 @@ Theft is a major problem that plagues society and many businesses, costing milli
   -  Thonny
   -  Visual Studio Code
   -  Windows Command Prompt
+  -  Mongo Database
 - **Hardware:**
   - Raspberry Pi 4 Model B
   - NEO 6M GPS Module 
