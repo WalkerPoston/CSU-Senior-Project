@@ -53,7 +53,7 @@ Senior Project Test Results
 | - | - |
 | Test Case | 6 |
 | Test Details | Checks the time that active devices appear on the map after startup. |
-| Test Steps | <ol><li>Power on the GPS device.</li><li>Launch application.</li><li>3.	Check that all the active devices appear after 10-20 seconds.</li> |
+| Test Steps | <ol><li>Power on the GPS device.</li><li>Launch application.</li><li>Check that all the active devices appear after 10-20 seconds.</li> |
 | Test Data | Once both the tracker and the application are on and running, when the “Start Tracking” button is clicked on the Map page, all active devices are displayed in less than 5 seconds. |
 | Expected Result | All active devices do appear after 10-20 seconds of application startup. |
 | Test Result | Pass |
